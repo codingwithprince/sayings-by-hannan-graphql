@@ -1,0 +1,22 @@
+.appBar{
+    position: relative;
+}
+.menu{
+    display: block;
+}
+.menuBtn{
+    display: none;
+}
+
+@media screen and ( max-width: 480px) {
+    .menu{
+        display: none;
+    }
+    .menuBtn{
+        display: block;
+    }
+}
+.menuItem{
+    font-weight: 700;
+    margin: 0 5px;
+}
