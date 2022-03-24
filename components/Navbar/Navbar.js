@@ -14,7 +14,7 @@ export default function Navbar() {
   return(
     <AppBar className={style.appBar}>
       <Toolbar>
-        <Typography variant="h6" style={{flexGrow: 1}}>Sayings By Hannan</Typography>
+        <Typography variant="h6" style={{flexGrow: 1, fontWeight: 700}}>Sayings By Hannan</Typography>
         <Box className={style.menu}>
             <Button color="inherit" className={style.menuItem}>
               <Link href='/'><a>Home</a></Link>
@@ -26,6 +26,8 @@ export default function Navbar() {
               <Link href='/about'><a>About</a></Link>
             </Button>
         </Box>
+
+        {/* === DRAWER === */}
         <Drawer />
       </Toolbar>
     </AppBar>
