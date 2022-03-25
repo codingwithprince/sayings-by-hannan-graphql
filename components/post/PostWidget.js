@@ -18,7 +18,6 @@ const PostWidget = ({categories, slug}) => {
     }
   },[slug])
   
-  console.log(relatedPost)
   return (
     <Card style={{marginTop:'20px'}}>
       <Typography variant='h6' style={{textAlign: 'center', marginTop:'10px'}}>{slug? 'Related Post' : 'Recent Post'}</Typography>

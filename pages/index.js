@@ -17,6 +17,7 @@ export default function Home({post}) {
          </Grid>
          <Grid item sm={4} md={3} style={{textAlign:'center'}}>
              <PostWidget />
+             <Categories />
          </Grid>
       </Grid>
      

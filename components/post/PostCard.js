@@ -5,11 +5,10 @@ import Image from 'next/image'
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import {Card, CardHeader, Avatar, IconButton, Typography, CardMedia, CardContent, CardActions, Box} from '@mui/material';
+import {Card, CardHeader, Avatar, IconButton, Typography, CardMedia, CardContent, CardActions, Box, Button, Grid} from '@mui/material';
 import style from '../../styles/Post.module.css'
 
 const PostCard = ({post}) => {
-  console.log(post)
   return (
     <Card sx={{ maxWidth:'100%' , margin: '20px'}}>
        <Box sx={{display: 'flex', margin:'10px'}}>
@@ -20,49 +19,37 @@ const PostCard = ({post}) => {
                  </Link>
                   <Typography variant='body2'>{moment(post.createdAt).format('MMM DD YYYY')}</Typography>
                </Box>
-             
              </Box>
 
-       {/* <CardHeader
-       
-        avatar={
-          <Avatar sx={{ backgroundColor:'orange' }} aria-label="recipe">
-            H
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            
-          </IconButton>
-        }
-        title={post.author.name}
-        subheader={moment(post.createdAt).format('MMM DD YYYY')}
-      /> */}
       <CardMedia
         component="img"
-        height="194"
+        height="120px"
         image={post.featuredimage.url}
         alt="Paella dish"
         sx={{
           padding: '10px',
-          minHeight: '300px'
+          minHeight: '200px'
         }}
       />
-      <CardContent  >
+      <CardContent  style={{height: '150px', overflow:'hidden'}}>
         <Typography variant='h6' className={style.cardTitle}>{post.title}</Typography>
-        <Typography variant='body2' className={style.richText}>
+        <Typography variant='body2' className={style.richText} >
          <RichText  content={post.content.raw} />
         </Typography>
         
       </CardContent>
 
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+      <CardActions disableSpacing sx={{marginTop:'10px'}}>
+              <IconButton aria-label="add to favorites">
+                  <FavoriteIcon />
+                </IconButton>
+                <IconButton aria-label="share">
+                  <ShareIcon />
+              </IconButton>
+              <Link href={`post/${post.slug}`}>
+              <Button size='small' variant='contained' sx={{backgroundColor:'#ff1493', marginLeft:'auto'}}>Read more</Button>
+              </Link>
+             
       </CardActions>
     </Card>
   )
