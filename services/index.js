@@ -20,6 +20,9 @@ export const getPosts = async () => {
             createdAt
             slug
             title
+            content {
+              raw
+            }
             featuredimage {
               url
             }
