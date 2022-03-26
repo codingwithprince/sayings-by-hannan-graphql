@@ -12,12 +12,12 @@ const PostCard = ({post}) => {
   return (
     <Card sx={{ maxWidth:'100%' , margin: '20px'}}>
        <Box sx={{display: 'flex', margin:'10px'}}>
-               <img style={{borderRadius:'50%'}} src={post.author.photo.url} height='70px' width='70px' />
+               <img style={{borderRadius:'50%'}} src={post.author.photo.url} height='50px' width='50px' />
                <Box style={{marginLeft: '10px', textAlign:'left'}}>
                  <Link key={post.title} href={`/post/${post.slug}`}>
-                    <Typography variant='body1'>{post.author.name}</Typography>
+                    <Typography variant='body1' sx={{fontWeight:'600', color: '#555'}}>{post.author.name}</Typography>
                  </Link>
-                  <Typography variant='body2'>{moment(post.createdAt).format('MMM DD YYYY')}</Typography>
+                  <Typography variant='body2' sx={{ color: '#777', marginTop:'5px'}}>{moment(post.createdAt).format('MMM DD YYYY')}</Typography>
                </Box>
              </Box>
 
