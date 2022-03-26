@@ -1,37 +1,33 @@
-import styles from '../styles/Home.module.css'
-import Head from 'next/head'
-import Layout from '../components/Layout'
-import { PostCard, Categories, PostWidget } from '../components/post'
-import { getPosts } from '../servies/index'
-import { Container, Grid } from '@mui/material'
+import { FeaturedPosts } from '../sections/index';
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
 
-export default function Home({post}) {
+export default function Home({ posts }) {
   return (
-   <Container fixed>
-      <Head>
-         <title>Sayings By Hannan</title>
-      </Head>
-      <Grid container spacing={2}>
-         <Grid item xs={12} sm={10} md={9}> 
-             {post.map((data) => <PostCard post={data.node} key={data.node.title}/>)}
-         </Grid>
-         <Grid item sm={4} md={3} style={{textAlign:'center'}}>
-             <PostWidget />
-             <Categories />
-         </Grid>
-      </Grid>
-     
-     
-   </Container> 
-
-
-    )
+    <div className="container mx-auto px-5 mb-8">
+      <FeaturedPosts />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-8 col-span-1">
+          {posts.map((post, index) => (
+            <PostCard key={index} post={post.node} />
+          ))}
+        </div>
+        <div className="lg:col-span-4 col-span-1">
+          <div className="lg:sticky relative top-8">
+            <PostWidget />
+            <Categories />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-
+// Fetch data at build time
 export async function getStaticProps() {
-   const post = ( await getPosts()) || [];
-   return {
-      props: { post }
-   }
+  const posts = (await getPosts()) || [];
+  return {
+    props: { posts },
+  };
 }
+
