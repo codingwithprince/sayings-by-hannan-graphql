@@ -31,7 +31,7 @@ const PostDetail = ({ post }) => {
             <span className="align-middle">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+        <h1 className="mb-8 text-3xl text-center font-semibold">{post.title}</h1>
         <div className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
           <RichText content={post.content.raw} />
         </div>
