@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 // import { RichText } from '@graphcms/rich-text-react-renderer';
 import { grpahCMSImageLoader } from '../util';
+import { RichText } from '@graphcms/rich-text-react-renderer';
 
 const PostCard = ({ post }) => (
   <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
@@ -35,7 +36,7 @@ const PostCard = ({ post }) => (
       </div>
     </div>
     <div className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8" style={{ height: '190px', overflow: 'hidden' }}>
-      {/* <RichText content={post.content.raw} /> */} nothing
+      <RichText content={post.content.raw} />
     </div>
     <div className="text-center">
       <Link href={`/post/${post.slug}`}>
