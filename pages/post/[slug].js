@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable indent */
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
 import { useRouter } from 'next/router';
 

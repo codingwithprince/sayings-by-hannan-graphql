@@ -161,6 +161,9 @@ export const getCategoryPost = async (slug) => {
                 url
               }
             }
+            content{
+              raw
+            }
             createdAt
             slug
             title
