@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable react/jsx-curly-newline */
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import moment from 'moment';
@@ -27,15 +29,16 @@ const PostWidget = ({ categories, slug }) => {
       {relatedPosts.map((post, index) => (
         <div key={index} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
-            <Image
+            {post.featuredImage && <Image
               loader={grpahCMSImageLoader}
               alt={post.title}
               height="60px"
               width="60px"
               unoptimized
               className="align-middle rounded-full"
-              src={post.featuredimage.url}
+              src={post.featuredImage.url}
             />
+}
           </div>
           <div className="flex-grow ml-4">
             <p className="text-gray-500 font-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>

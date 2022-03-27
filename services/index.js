@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import { request, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
@@ -20,10 +21,10 @@ export const getPosts = async () => {
             createdAt
             slug
             title
-            content {
+            content{
               raw
             }
-            featuredimage {
+            featuredImage {
               url
             }
             categories {
@@ -61,7 +62,7 @@ export const getPostDetails = async (slug) => {
     query GetPostDetails($slug : String!) {
       post(where: {slug: $slug}) {
         title
-        featuredimage {
+        featuredImage {
           url
         }
         author{
@@ -97,7 +98,7 @@ export const getSimilarPosts = async (categories, slug) => {
         last: 3
       ) {
         title
-        featuredimage {
+        featuredImage {
           url
         }
         createdAt
@@ -119,7 +120,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
       ) {
         title
-        featuredimage {
+        featuredImage {
           url
         }
         createdAt
@@ -131,7 +132,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
       ) {
         title
-        featuredimage {
+        featuredImage {
           url
         }
         createdAt
@@ -163,7 +164,7 @@ export const getCategoryPost = async (slug) => {
             createdAt
             slug
             title
-            featuredimage {
+            featuredImage {
               url
             }
             categories {
@@ -191,7 +192,7 @@ export const getFeaturedPosts = async () => {
             url
           }
         }
-        featuredimage {
+        featuredImage {
           url
         }
         title
@@ -242,7 +243,7 @@ export const getRecentPosts = async () => {
         last: 3
       ) {
         title
-        featuredimage {
+        featuredImage {
           url
         }
         createdAt
