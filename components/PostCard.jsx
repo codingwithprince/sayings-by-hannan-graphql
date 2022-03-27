@@ -3,7 +3,7 @@ import Image from 'next/image';
 import moment from 'moment';
 import Link from 'next/link';
 
-import { RichText } from '@graphcms/rich-text-react-renderer';
+// import { RichText } from '@graphcms/rich-text-react-renderer';
 import { grpahCMSImageLoader } from '../util';
 
 const PostCard = ({ post }) => (
@@ -35,7 +35,7 @@ const PostCard = ({ post }) => (
       </div>
     </div>
     <div className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8" style={{ height: '190px', overflow: 'hidden' }}>
-      <RichText content={post.content.raw} />
+      {/* <RichText content={post.content.raw} /> */} nothing
     </div>
     <div className="text-center">
       <Link href={`/post/${post.slug}`}>
