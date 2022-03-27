@@ -3,9 +3,8 @@ import Image from 'next/image';
 import moment from 'moment';
 import Link from 'next/link';
 
-// import { RichText } from '@graphcms/rich-text-react-renderer';
-import { grpahCMSImageLoader } from '../util';
 import { RichText } from '@graphcms/rich-text-react-renderer';
+import { grpahCMSImageLoader } from '../util';
 
 const PostCard = ({ post }) => (
   <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
