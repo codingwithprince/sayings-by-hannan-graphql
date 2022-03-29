@@ -14,7 +14,7 @@ export default function Home({ posts }) {
         <div className="lg:col-span-8 col-span-1">
           {posts && posts.map((post, index) => (
             <PostCard key={index} post={post.node} />
-          ))}
+          )).reverse()}
         </div>
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8">
